@@ -59,13 +59,13 @@ start:
      
     ;indirizzamento registro registro
     
-    add ah , al     ;  ah <-  ah - al
+    add ah , al     ;  ah <-  ah + al
      
      
      
     ; aprire una vista della memoria  che punti al segnemto dei dati
-    ; guardare il valore del registro CS posizionare la finestra 
-    ; al valore CS:00  (dovrebbe essere 0710:0000 ) e cliccare su 
+    ; guardare il valore del registro DS posizionare la finestra 
+    ; al valore DS:00  (dovrebbe essere 0710:0000 ) e cliccare su 
     ; UPDATE   
     ;
     ; 
