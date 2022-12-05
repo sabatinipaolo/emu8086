@@ -39,32 +39,35 @@ start:
     mov ah, 00
     inc ah 
     
-    jnz indirizzo  ; modifica il registro IP
-                   ; in modo la successiva 
-                   ; istruzione da eseguire 
-                   ; sia quella contrassegnata 
-                   ; dalla "label" indirizzo 
+    jz indirizzo  ; JZ e' un'istruzione di salto condizionato
+                  ; il processore salta a indirizzo
+                  ; SE l'ultima istruzione ha dato un risultato 
+                  ; uguale a zero 
+                   
+    inc ah        ; poiche' l'ultima istruzione ( inc ah ) 
+    inc ah        ; ha prodotto un risultato <> 0 
+    inc ah        ; questo gruppo di istruzioni
+    inc ah        ; stavolta verranno eseguite 
     
-    inc ah
-    inc ah
-    inc ah         ; questo gruppo di istruzioni
-    inc ah         ; non verranno eseguite
+    
+    sub ah ,05
+    
+    jz indirizzo  ;l'ultima istruzione che risultato ha dato?   
+    
+    dec ah        ; 
+    dec ah        ; queste non vengono eseguite 
+    dec ah        ; 
+    
+    ; JZ e' un SALTO CONDIZIONATO il programma "salta" se precedentemente
+    ; si è verificata una certa condizione ( es. risultato zero )
+    ; per un elenco di salti vedere la foto allegata 
+    
 
 indirizzo:
-    add ah,2 ;     
-    
-    sub ah,2  
-    
-    ; cosa succedera' alla prossima istruzione?
-    
-    jz indirizzo
- 
- 
-; l'istruzione JMP e' detta di salto incondizionato
-                   
+                  
+    mov bx , 0120h
    
     hlt  ; ferma il programma
 
 ends
 
-end start ; set entry point and stop the assembler.
