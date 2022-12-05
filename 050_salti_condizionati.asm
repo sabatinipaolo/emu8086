@@ -39,7 +39,7 @@ start:
     mov ah, 00
     inc ah 
     
-    jmp indirizzo  ; modifica il registro IP
+    jnz indirizzo  ; modifica il registro IP
                    ; in modo la successiva 
                    ; istruzione da eseguire 
                    ; sia quella contrassegnata 
@@ -57,7 +57,7 @@ indirizzo:
     
     ; cosa succedera' alla prossima istruzione?
     
-    jmp indirizzo
+    jz indirizzo
  
  
 ; l'istruzione JMP e' detta di salto incondizionato
