@@ -28,6 +28,8 @@ while:
     mov ah, [si]
     cmp ah , 0 
     je fine_while
+
+        sub ah , 32
         
         mov [di], ah
         inc si
