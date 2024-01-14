@@ -37,7 +37,7 @@ while:
         
          
 fine_while:
-
+    mov [di],ah 
     hlt
     
         
